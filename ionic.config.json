@@ -1,0 +1,7 @@
+{
+  "name": "ionic-assignment4",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

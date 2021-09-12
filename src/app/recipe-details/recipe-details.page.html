@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Recipe Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div *ngIf="recipeDetail">
+
+    <ion-img [src]="recipeDetail.recipe.image"></ion-img>
+
+    <ion-card class="ion-no-margin">
+
+      <ion-card-header>
+        <ion-card-title>{{recipeDetail.recipe.label}}</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <strong>Ingredients</strong>
+        <p *ngFor="let ingredient of recipeDetail.recipe.ingredientLines"> {{ingredient}} </p>
+        <strong>Source: </strong> {{recipeDetail.recipe.source}}
+        <p>
+          <strong>Visit </strong> <a [href]="recipeDetail.recipe.url">this link</a> <strong> for step by step process
+            for
+            recipe.</strong>
+        </p>
+      </ion-card-content>
+
+      <ion-button expand="block" (click)="addToFavorite()">Add to Favorites</ion-button>
+
+    </ion-card>
+  </div>
+
+</ion-content>
